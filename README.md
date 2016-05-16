@@ -1,2 +1,6 @@
 # tornado_demo
-creating a new branch is quick & simple
+<<<<<<< HEAD
+creating a new branch is quick AND simple
+=======
+creating a new branch is quick AND simple
+>>>>>>> future1
