@@ -2,9 +2,11 @@
 # coding=utf-8
 
 import tornado.web
+import tornado.escape
 import methods.readdb as mrd
+from base import BaseHandler
 
-class IndexHandler(tornado.web.RequestHandler):
+class IndexHandler(BaseHandler):
     def get(self):
         usernames = mrd.select_columns(table="authors", column="name")
         one_user = usernames[1][0]
@@ -19,9 +21,17 @@ class IndexHandler(tornado.web.RequestHandler):
         if user_infos:
             db_pwd = user_infos[0][3]
             if db_pwd == password:
+                self.set_current_user(username)
                 self.write(username)
             else:
-                self.write("your password is not right")
+                self.write("-1")
         else:
-            self.write("there is no this user")
+            self.write("-1")
+
+    def set_current_user(self, user):
+        if user:
+            self.set_secure_cookie('user', tornado.escape.json_encode(user))
+        else:
+            self.clear_cookie("user")
+
 
