@@ -15,6 +15,6 @@ from handlers.sleepy import SleepHandler, SeeHandler
 url = [
     (r'/', IndexHandler),
     (r'/user', UserHandler),
-    (r'/see', SleepHandler),
-    (r'/sleep', SeeHandler)
+    (r'/see', SeeHandler),
+    (r'/sleep', SleepHandler)
 ]
