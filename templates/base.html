@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Learning Python</title>
+    <link rel="stylesheet" type="text/css" href="{{static_url('css/style.css')}}">
 </head>
 <body>
+<header>
+    {% block header %}{% end %}
+</header>
+<content>
+    {% block body %}{% end %}
+</content>
+<footer>
+    {% set website = "<a href='http://www.baidu.com'>welcome to baidu</a>"%}
+    {% raw website %}
+</footer>
 
 </body>
+<script src="{{static_url('js/jquery-1.12.3.min.js')}}"></script>
+<script src="{{static_url('js/script.js')}}"></script>
 </html>

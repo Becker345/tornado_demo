@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="UTF-8"/>
-    <title>learning python</title>
-</head>
-<body>
-<h2>登录页面</h2>
-<p>用用户名为:{{user}}登录</p>
-<form>
-    <p><span>UserName:</span><input type="text" id="username" autofocus></p>
-    <p><span>Password:</span><input type="password" id="password"/></p>
-    <p><input type="button" value="登录" id="login"/></p>
+{% extends "base.html" %}
+{% block header %}
+<h2>登录界面</h2>
+<p>用户名为:{{user}}</p>
+{% end %}
+{% block body %}
+<form method="post">
+    <p><span>userName:</span><input type="text" id="username"></p>
+    <p><span>password:</span><input type="password" id="password"></p>
+    <p><input type="button" value="登录" id="login"></p>
 </form>
-{%set website = "<a href='http://www.baidu.com'>welcome to baidu</a>"%}
-{%raw website %}
-</body>
-<script src='{{static_url("js/jquery-1.12.3.min.js")}}'></script>
-<script src='{{static_url("js/script.js")}}'></script>
-</html>
+{% end %}
+

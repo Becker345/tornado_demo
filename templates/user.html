@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>learning python</title>
-</head>
-<body>
-<h2>your information are: </h2>
+{% extends "base.html" %}
+{% block header %}
+<h2>Your information are: </h2>
+{% end %}
+{% block body %}
 <ul>
     {% for one in users %}
     <li>email: {{one[1]}}</li>
     <li>name: {{one[2]}}</li>
-    <li>hashed_password: {{one[3]}}</li>
+    <li>hashed_pass: {{one[3]}}</li>
     {% end %}
 </ul>
-
-</body>
-</html>
+{% end %}
