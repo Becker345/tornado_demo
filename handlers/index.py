@@ -8,7 +8,7 @@ class IndexHandler(tornado.web.RequestHandler):
     def get(self):
         usernames = mrd.select_columns(table="authors", column="name")
         one_user = usernames[1][0]
-        self.render("index.html", user=one_user)
+        self.render("index1.html", user=one_user)
 
 
     def post(self):
