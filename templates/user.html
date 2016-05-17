@@ -9,9 +9,9 @@
 <h2>your information are: </h2>
 <ul>
     {% for one in users %}
-    <li>username: {{one[1]}}</li>
-    <li>password: {{one[2]}}</li>
-    <li>email: {{one[3]}}</li>
+    <li>email: {{one[1]}}</li>
+    <li>name: {{one[2]}}</li>
+    <li>hashed_password: {{one[3]}}</li>
     {% end %}
 </ul>
 
